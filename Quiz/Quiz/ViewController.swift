@@ -19,9 +19,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var button3: UIButton!
     
     @IBOutlet weak var button4: UIButton!
+    
+    
+    
+    
+    var correctAnswer = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+   
+    
+    randomQuestion()
+    
+    
+    
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,164 +53,168 @@ class ViewController: UIViewController {
         case 1:
             
             questionLabel.text="W którym roku wybuchła pierwsza wojna światowa?"
-            button1.setTitle("1410", for: <#T##UIControlState#>)
-            button2.setTitle("1914", for: <#T##UIControlState#>)
-            button3.setTitle("1918", for: <#T##UIControlState#>)
-            button4.setTitle("1945", for: <#T##UIControlState#>)
-
-            break;
+            button1.setTitle("A: 1410", for: UIControlState.normal)
+            button2.setTitle("B: 1914", for: UIControlState.normal)
+            button3.setTitle("C: 1918", for: UIControlState.normal)
+            button4.setTitle("D: 1945", for: UIControlState.normal)
+            correctAnswer="2"
+            
+            break
             
         case 2:
             
             questionLabel.text="Jakie miasto jest stolicą Francji?"
-            button1.setTitle("Paryż", for: <#T##UIControlState#>)
-            button2.setTitle("Berlin", for: <#T##UIControlState#>)
-            button3.setTitle("Moskwa", for: <#T##UIControlState#>)
-            button4.setTitle("Warszawa", for: <#T##UIControlState#>)
+            button1.setTitle("A: Paryż", for: UIControlState.normal)
+            button2.setTitle("B: Berlin", for: UIControlState.normal)
+            button3.setTitle("C: Moskwa", for: UIControlState.normal)
+            button4.setTitle("D: Warszawa", for: UIControlState.normal)
+            correctAnswer="1"
             
-            break;
+            break
             
         case 3:
             
             questionLabel.text="Na co urządzaja polowania słynne szympansy z lasu Bili?"
-            button1.setTitle("na tygrysy", for: <#T##UIControlState#>)
-            button2.setTitle("na lwy", for: <#T##UIControlState#>)
-            button3.setTitle("na słonie", for: <#T##UIControlState#>)
-            button4.setTitle("na człowieka", for: <#T##UIControlState#>)
-            
-            break;
+            button1.setTitle("A: na tygrysy", for: UIControlState.normal)
+            button2.setTitle("B: na lwy", for: UIControlState.normal)
+            button3.setTitle("C: na słonie", for: UIControlState.normal)
+            button4.setTitle("D: na człowieka", for: UIControlState.normal)
+            correctAnswer="1"
+            break
             
         case 4:
             
             questionLabel.text="Ile razy na dobe pije zając?"
-            button1.setTitle("2", for: <#T##UIControlState#>)
-            button2.setTitle("24", for: <#T##UIControlState#>)
-            button3.setTitle("zając nie pije", for: <#T##UIControlState#>)
-            button4.setTitle("100", for: <#T##UIControlState#>)
-            
-            break;
+            button1.setTitle("A: 2", for: UIControlState.normal)
+            button2.setTitle("B: 24", for: UIControlState.normal)
+            button3.setTitle("C: zając nie pije", for: UIControlState.normal)
+            button4.setTitle("D: 100", for: UIControlState.normal)
+            correctAnswer="3"
+            break
             
         case 5:
             
             questionLabel.text="Jaki kolor języka mają żyrafy?"
-            button1.setTitle("czerwony", for: <#T##UIControlState#>)
-            button2.setTitle("czarny", for: <#T##UIControlState#>)
-            button3.setTitle("zółty", for: <#T##UIControlState#>)
-            button4.setTitle("zielony", for: <#T##UIControlState#>)
-            
-            break;
+            button1.setTitle("A: czerwony", for: UIControlState.normal)
+            button2.setTitle("B: czarny", for: UIControlState.normal)
+            button3.setTitle("C: zółty", for: UIControlState.normal)
+            button4.setTitle("D: zielony", for: UIControlState.normal)
+            correctAnswer="2"
+            break
             
             
         case 6:
             
-            questionLabel.text="Wszystkie te osoby były nominowane do Pokojowej Nagrody NObla, jedna z nich aż dwukrotnie. Która?"
-            button1.setTitle("Wojciech Jaruzelski", for: <#T##UIControlState#>)
-            button2.setTitle("Benito Mussolini", for: <#T##UIControlState#>)
-            button3.setTitle("Józef Stalin", for: <#T##UIControlState#>)
-            button4.setTitle("Władimir Putin", for: <#T##UIControlState#>)
-            
-            break;
+            questionLabel.text="Wszystkie te osoby były nominowane do Pokojowej Nagrody Nobla, jedna z nich aż dwukrotnie. Która?"
+            button1.setTitle("A: Wojciech Jaruzelski", for: UIControlState.normal)
+            button2.setTitle("B: Benito Mussolini", for: UIControlState.normal)
+            button3.setTitle("C: Józef Stalin", for: UIControlState.normal)
+            button4.setTitle("D: Władimir Putin", for: UIControlState.normal)
+            correctAnswer="3"
+            break
             
         case 7:
             
             questionLabel.text="Po jakim czasie psuje się miód?"
-            button1.setTitle("po roku", for: <#T##UIControlState#>)
-            button2.setTitle("po 10 latach", for: <#T##UIControlState#>)
-            button3.setTitle("po 25 latach", for: <#T##UIControlState#>)
-            button4.setTitle("nigdy", for: <#T##UIControlState#>)
-            
-            break;
+            button1.setTitle("A: po roku", for: UIControlState.normal)
+            button2.setTitle("B: po 10 latach", for: UIControlState.normal)
+            button3.setTitle("C: po 25 latach", for: UIControlState.normal)
+            button4.setTitle("D: nigdy", for: UIControlState.normal)
+            correctAnswer="4"
+            break
             
             
         case 8:
             
             questionLabel.text="Ile zwrotek ma grecki hymn?"
-            button1.setTitle("1", for: <#T##UIControlState#>)
-            button2.setTitle("nie ma słów", for: <#T##UIControlState#>)
-            button3.setTitle("111", for: <#T##UIControlState#>)
-            button4.setTitle("158", for: <#T##UIControlState#>)
-            
-            break;
+            button1.setTitle("A: 1", for: UIControlState.normal)
+            button2.setTitle("B: nie ma słów", for: UIControlState.normal)
+            button3.setTitle("C: 111", for: UIControlState.normal)
+            button4.setTitle("D: 158", for: UIControlState.normal)
+            correctAnswer="4"
+            break
             
         case 9:
             
             questionLabel.text="Jaki kolor ma skóra niedźwiedzia polarnego?"
-            button1.setTitle("zielony", for: <#T##UIControlState#>)
-            button2.setTitle("biały", for: <#T##UIControlState#>)
-            button3.setTitle("różowy", for: <#T##UIControlState#>)
-            button4.setTitle("czarny", for: <#T##UIControlState#>)
-            
-            break;
+            button1.setTitle("A: zielony", for: UIControlState.normal)
+            button2.setTitle("B: biały", for: UIControlState.normal)
+            button3.setTitle("C: różowy", for: UIControlState.normal)
+            button4.setTitle("D: czarny", for: UIControlState.normal)
+            correctAnswer="2"
+            break
             
         case 10:
             
-            questionLabel.text="Która ze znanych osóļ zdobyła najwięcej punktów IQ?"
-            button1.setTitle("Sharon Stone", for: <#T##UIControlState#>)
-            button2.setTitle("Albert Einstein", for: <#T##UIControlState#>)
-            button3.setTitle("Natalie Portman", for: <#T##UIControlState#>)
-            button4.setTitle("Stephen Hawking", for: <#T##UIControlState#>)
-            
-            break;
+            questionLabel.text="Która ze znanych osób zdobyła najwięcej punktów IQ?"
+            button1.setTitle("A: Sharon Stone", for: UIControlState.normal)
+            button2.setTitle("B: Albert Einstein", for: UIControlState.normal)
+            button3.setTitle("C: Natalie Portman", for: UIControlState.normal)
+            button4.setTitle("D: Stephen Hawking", for: UIControlState.normal)
+            correctAnswer="3"
+            break
             
         case 11:
             
             questionLabel.text="W jakim wieku słonie przestają rosnąć?"
-            button1.setTitle("20 lat", for: <#T##UIControlState#>)
-            button2.setTitle("10 lat", for: <#T##UIControlState#>)
-            button3.setTitle("40 lat", for: <#T##UIControlState#>)
-            button4.setTitle("nigdy", for: <#T##UIControlState#>)
-            
-            break;
+            button1.setTitle("A: 20 lat", for: UIControlState.normal)
+            button2.setTitle("B: 10 lat", for: UIControlState.normal)
+            button3.setTitle("C: 40 lat", for: UIControlState.normal)
+            button4.setTitle("D: nigdy", for: UIControlState.normal)
+            correctAnswer="2"
+            break
             
             
         case 12:
             
             questionLabel.text="Ile trwała wojna w historii?"
-            button1.setTitle("mniej niż godzinę", for: <#T##UIControlState#>)
-            button2.setTitle("miesiąc bez jednego dnia", for: <#T##UIControlState#>)
-            button3.setTitle("prawie dobę", for: <#T##UIControlState#>)
-            button4.setTitle("tydzień", for: <#T##UIControlState#>)
-            
-            break;
+            button1.setTitle("A:mniej niż godzinę", for: UIControlState.normal)
+            button2.setTitle("B: miesiąc bez jednego dnia", for: UIControlState.normal)
+            button3.setTitle("C: prawie dobę", for: UIControlState.normal)
+            button4.setTitle("D: tydzień", for: UIControlState.normal)
+            correctAnswer="1"
+            break
             
         case 13:
             
             questionLabel.text="Kto był pierwszym koronowanym królem Polski?"
-            button1.setTitle("Władysław Jagiełło", for: <#T##UIControlState#>)
-            button2.setTitle("Bolesław Chrobry", for: <#T##UIControlState#>)
-            button3.setTitle("Mieszko I", for: <#T##UIControlState#>)
-            button4.setTitle("Władysław Łokietek", for: <#T##UIControlState#>)
+            button1.setTitle("A: Władysław Jagiełło", for: UIControlState.normal)
+            button2.setTitle("B: Bolesław Chrobry", for: UIControlState.normal)
+            button3.setTitle("C: Mieszko I", for: UIControlState.normal)
+            button4.setTitle("D: Władysław Łokietek", for: UIControlState.normal)
+            correctAnswer="2"
             
-            break;
+            break
             
         case 14:
             
             questionLabel.text="Zielony w języku angielskim to...?"
-            button1.setTitle("blue", for: <#T##UIControlState#>)
-            button2.setTitle("red", for: <#T##UIControlState#>)
-            button3.setTitle("grey", for: <#T##UIControlState#>)
-            button4.setTitle("green", for: <#T##UIControlState#>)
-            
-            break;
+            button1.setTitle("A: blue", for: UIControlState.normal)
+            button2.setTitle("B: red", for: UIControlState.normal)
+            button3.setTitle("C: grey", for: UIControlState.normal)
+            button4.setTitle("D: green", for: UIControlState.normal)
+            correctAnswer="4"
+            break
             
         case 15:
             
             questionLabel.text="Kto rozśmiesza ludzi w cyrku?"
-            button1.setTitle("clown", for: <#T##UIControlState#>)
-            button2.setTitle("komik", for: <#T##UIControlState#>)
-            button3.setTitle("satyryk", for: <#T##UIControlState#>)
-            button4.setTitle("pajac", for: <#T##UIControlState#>)
+            button1.setTitle("A: clown", for: UIControlState.normal)
+            button2.setTitle("B: komik", for: UIControlState.normal)
+            button3.setTitle("C: satyryk", for: UIControlState.normal)
+            button4.setTitle("D: pajac", for: UIControlState.normal)
+            correctAnswer="1"
+            break
             
-            break;
+        default:
+            break
             
         }
-        
-        
-        
+
     }
     
-    
-    
+
+
     
     
     
