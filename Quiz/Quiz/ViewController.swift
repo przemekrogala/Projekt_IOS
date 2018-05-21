@@ -28,11 +28,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-   
+       
     
-    randomQuestion()
-    
-    
+   randomQuestion()
+   //losowanieBezPowtorzen()
+  
     
     
     }
@@ -43,11 +43,61 @@ class ViewController: UIViewController {
     }
     
     
+    //funkcja losująca bez potworzen || z puli 15 pytań losuje 10
+   
+    func generateRandomNumber(_ from:Int, _ to:Int, _ qut:Int?)->[Int]
+        
+   {
+    var myRandomNumbers=[Int]()
+    var numberOfNumbers=qut
+    let lower = UInt32(from)
+    let higher=UInt32(to+1)
+    
+    if numberOfNumbers == nil || numberOfNumbers! > (to-from) + 1
+    {
+        numberOfNumbers = (to-from) + 1
+    }
+    while myRandomNumbers.count != numberOfNumbers
+    {
+        let myNumber = arc4random_uniform(higher-lower) + lower
+            if !myRandomNumbers.contains(Int(myNumber))
+            {
+                myRandomNumbers.append(Int(myNumber))
+        }
+        
+        }
+    return myRandomNumbers
+    }
+    
+    
+    
+
+  //  let tablica:[Int]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     func randomQuestion(){
+       print(generateRandomNumber(1, 15, 10))
+       
+       var randomNumber = arc4random() % 4
         
-        var randomNumber = arc4random() % 4
+       randomNumber+=1
         
-        randomNumber+=1
+        
+        
+        
+        
+        
+        
+        
+        /*  var randomNumber = arc4random_uniform(15)+1
+         
+         for i in 1...10
+         {
+         randomNumber = arc4random_uniform(15)+1
+         print(randomNumber)
+         
+         }
+         
+         
+         */
         
         switch (randomNumber){
         case 1:
