@@ -8,8 +8,21 @@
 
 import UIKit
 
+
+
+
 class SecondViewController: UIViewController {
 
+    
+    
+    @IBAction func newGame(_ sender: Any) {
+        
+        performSegue(withIdentifier: "segue", sender: self)
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

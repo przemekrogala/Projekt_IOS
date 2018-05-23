@@ -27,28 +27,31 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var wynikLabel: UILabel!
     var correctAnswer = String()
-    
-    var tablicaPytan = Array(repeating: 0, count: 10)
+ 
+    //deklaracja tablicy pytan i tablicy punktacji pienieznej oraz zmiennych iteracyjnych po tablicach zaczynajacych sie od -1 bo gdy i = i+1 to i pocz. = 0 a nie 1 !
+    var tablicaPytan = Array(repeating: 0, count: 11)
     var gotowka : [String] = []
     var i : Int = -1
     var j: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-       
-      
-        tablicaPytan=generateRandomNumber(1, 15, 10)
-        gotowka=["500zł","1000zł - Kwota Gwarantowana","5000zł","20000zł","40000zł - Kwota Gwarantowana","75000zł","125000zł","250000zł","500000zł","1000000zł"]
         
+      
+        tablicaPytan=generateRandomNumber(1, 15, 11)
+        
+        
+        gotowka=["500zł","1000zł - Kwota Gwarantowana","5000zł","20000zł","40000zł - Kwota Gwarantowana","75000zł","125000zł","250000zł","500000zł","1000000zł",""]
+        
+     
+        
+        //wywolanie funkcji
         
         losowanie()
         
         
         
-
- // randomQuestion()
-   //losowanieBezPowtorzen()
+  
   
     
     
@@ -87,25 +90,19 @@ class ViewController: UIViewController {
     return myRandomNumbers
     }
     
-    
-    
-
-  //  let tablica:[Int]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-   /* func randomQuestion(){
-        
-     
-      var tablica=generateRandomNumber(1, 15, 10)
-        print (tablica[0])
-     
-        var randomNumber = tablica[0]
+    func ukryjPrzyciski()
+    {
+        button1.isHidden=true
+        button2.isHidden=true
+        button3.isHidden=true
+        button4.isHidden=true
+        questionLabel.isHidden=true
+        wynikLabel.isHidden=true
 
         
-     
-     
-  */
-        
+    }
     
-    
+
     
     func losowanie()
     {
@@ -120,7 +117,7 @@ class ViewController: UIViewController {
         komunikatLabel.text=""
         wynikLabel.text="Grasz o "+wynik
          
-        
+        print(i)
     
         
         switch (pytanie){
@@ -299,12 +296,25 @@ class ViewController: UIViewController {
             
             nextQuestion.isHidden=false;
         }
-        else
-        
+   
+        else if ( i > 1 && i < 4)
         {
+            komunikatLabel.text="Wygrałes 1000 zł"
+            ukryjPrzyciski()
             
-            komunikatLabel.text="Niestety to nie jest poprawna odopowiedź"
+            
         }
+        else if (i > 4 && i < 9)
+        {
+            komunikatLabel.text="Wygrałes 40 000 zł"
+            ukryjPrzyciski()
+        }
+        else
+        {
+            komunikatLabel.text="Wygrałes 0 zł"
+        ukryjPrzyciski()
+        }
+
         
     }
     
@@ -312,13 +322,25 @@ class ViewController: UIViewController {
         if (correctAnswer=="2")
         {
            komunikatLabel.text="To poprawna odpowiedź!"
-             nextQuestion.isHidden=false;
+            nextQuestion.isHidden=false
+        }
+    
+        else if ( i > 1 && i < 4)
+        {
+            komunikatLabel.text="Wygrałes 1000 zł"
+            ukryjPrzyciski()
+            
+            
+        }
+        else if (i > 4 && i < 9)
+        {
+            komunikatLabel.text="Wygrałes 40 000 zł"
+            ukryjPrzyciski()
         }
         else
-            
         {
-            
-            komunikatLabel.text="Niestety to nie jest poprawna odopowiedź"
+            komunikatLabel.text="Wygrałes 0 zł"
+            ukryjPrzyciski()
         }
 
     }
@@ -327,14 +349,26 @@ class ViewController: UIViewController {
         if (correctAnswer=="3")
         {
            komunikatLabel.text="To poprawna odpowiedź!"
-             nextQuestion.isHidden=false;
+             nextQuestion.isHidden=false
+        }
+     
+        else if( i > 1 && i < 4)
+        {
+            komunikatLabel.text="Wygrałes 1000 zł"
+            ukryjPrzyciski()
+            
+        }
+        else if (i > 4 && i < 9)
+        {
+            komunikatLabel.text="Wygrałes 40 000 zł"
+            ukryjPrzyciski()
         }
         else
-            
         {
-            
-            komunikatLabel.text="Niestety to nie jest poprawna odopowiedź"
+            komunikatLabel.text="Wygrałes 0 zł"
+            ukryjPrzyciski()
         }
+
 
     }
     
@@ -346,18 +380,42 @@ class ViewController: UIViewController {
             nextQuestion.isHidden=false
             
         }
-        else
-            
+      
+        else if( i > 1 && i < 4)
         {
-            
-            komunikatLabel.text="Niestety to nie jest poprawna odopowiedź"
-        }
+            komunikatLabel.text="Wygrałes 1000 zł"
+          ukryjPrzyciski()
 
+        }
+        else if (i > 4 && i < 9)
+        {
+            ukryjPrzyciski()
+            komunikatLabel.text="Wygrałes 40 000 zł"
+        }
+        else
+        {
+            ukryjPrzyciski()
+            komunikatLabel.text="Wygrałes 0 zł"
+        }
     }
+    
 
     @IBAction func nextQuestionAction(_ sender: Any) {
         
    losowanie()
+        if i > 9
+        {
+            komunikatLabel.text="Wygrałes milionik!!!!!!!"
+            ukryjPrzyciski()
+        }
+    }
+    
+    
+    
+    @IBAction func backButton(_ sender: Any) {
+        
+        
+         performSegue(withIdentifier: "segueBack", sender: self)
     }
    
 

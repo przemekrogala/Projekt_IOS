@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wrn-zu-fPN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -92,6 +93,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poM-v2-ufn">
+                                <rect key="frame" x="300" y="637" width="75" height="30"/>
+                                <state key="normal" title="powrót"/>
+                                <connections>
+                                    <action selector="backButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zdi-v7-ZEJ"/>
+                                    <segue destination="Wrn-zu-fPN" kind="show" identifier="segueBack" id="i3u-ES-LOI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77088069682738336" green="1" blue="0.97206427192720879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -108,6 +117,7 @@
                             <constraint firstItem="Gy3-Nw-C6J" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ido-4i-Jjk"/>
                             <constraint firstItem="sTy-pN-QJd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="kRQ-fF-caV"/>
                             <constraint firstItem="2ki-rc-Km6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kSi-cV-cSa"/>
+                            <constraint firstItem="poM-v2-ufn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="284" id="ltM-9i-Xnj"/>
                             <constraint firstItem="Gy3-Nw-C6J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pgO-dq-ijW"/>
                             <constraint firstItem="eIa-cI-qkl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tZ0-qm-rc3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gy3-Nw-C6J" secondAttribute="bottom" constant="264" id="tty-gx-oH0"/>
@@ -126,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="376.80000000000001" y="187.55622188905548"/>
+            <point key="canvasLocation" x="-498.39999999999998" y="187.55622188905548"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="Ixi-H7-3bE">
@@ -147,18 +157,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3f-ZT-cBL">
-                                <rect key="frame" x="32" y="287" width="343" height="92"/>
+                                <rect key="frame" x="32" y="263" width="343" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Nowa Gra">
                                     <color key="titleColor" red="0.50306593653626031" green="0.40851067343070013" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpf-Cg-DzD">
-                                <rect key="frame" x="32" y="450" width="343" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Highscores"/>
+                                <connections>
+                                    <action selector="newGame:" destination="Wrn-zu-fPN" eventType="touchUpInside" id="gPd-Kj-ePk"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="zWs-WU-3UK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.72081522015836696" green="0.99774631429671601" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -171,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rd-4G-oJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346.39999999999998" y="188.45577211394306"/>
+            <point key="canvasLocation" x="-1276" y="188"/>
         </scene>
     </scenes>
 </document>
