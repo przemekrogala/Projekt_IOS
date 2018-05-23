@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011A441420B377D700948321 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011A441320B377D700948321 /* SecondViewController.swift */; };
 		01AE40FF20B16826000B9FCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AE40FE20B16826000B9FCD /* AppDelegate.swift */; };
 		01AE410120B16826000B9FCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AE410020B16826000B9FCD /* ViewController.swift */; };
 		01AE410420B16826000B9FCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AE410220B16826000B9FCD /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		011A441320B377D700948321 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		01AE40FB20B16826000B9FCD /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AE40FE20B16826000B9FCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AE410020B16826000B9FCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				01AE40FE20B16826000B9FCD /* AppDelegate.swift */,
 				01AE410020B16826000B9FCD /* ViewController.swift */,
 				01AE410220B16826000B9FCD /* Main.storyboard */,
+				011A441320B377D700948321 /* SecondViewController.swift */,
 				01AE410520B16826000B9FCD /* Assets.xcassets */,
 				01AE410720B16826000B9FCD /* LaunchScreen.storyboard */,
 				01AE410A20B16826000B9FCD /* Info.plist */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011A441420B377D700948321 /* SecondViewController.swift in Sources */,
 				01AE410120B16826000B9FCD /* ViewController.swift in Sources */,
 				01AE40FF20B16826000B9FCD /* AppDelegate.swift in Sources */,
 			);
@@ -505,6 +509,7 @@
 				01AE412520B16826000B9FCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01AE412620B16826000B9FCD /* Build configuration list for PBXNativeTarget "QuizTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +518,7 @@
 				01AE412820B16826000B9FCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01AE412920B16826000B9FCD /* Build configuration list for PBXNativeTarget "QuizUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +527,7 @@
 				01AE412B20B16826000B9FCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

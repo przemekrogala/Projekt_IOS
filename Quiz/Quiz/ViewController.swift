@@ -20,17 +20,34 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var button4: UIButton!
     
+    @IBOutlet weak var komunikatLabel: UILabel!
+    
+    @IBOutlet weak var nextQuestion: UIButton!
     
     
-    
+    @IBOutlet weak var wynikLabel: UILabel!
     var correctAnswer = String()
+    
+    var tablicaPytan = Array(repeating: 0, count: 10)
+    var gotowka : [String] = []
+    var i : Int = -1
+    var j: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        
-    
-   randomQuestion()
+      
+        tablicaPytan=generateRandomNumber(1, 15, 10)
+        gotowka=["500zł","1000zł - Kwota Gwarantowana","5000zł","20000zł","40000zł - Kwota Gwarantowana","75000zł","125000zł","250000zł","500000zł","1000000zł"]
+        
+        
+        losowanie()
+        
+        
+        
+
+ // randomQuestion()
    //losowanieBezPowtorzen()
   
     
@@ -48,6 +65,7 @@ class ViewController: UIViewController {
     func generateRandomNumber(_ from:Int, _ to:Int, _ qut:Int?)->[Int]
         
    {
+    
     var myRandomNumbers=[Int]()
     var numberOfNumbers=qut
     let lower = UInt32(from)
@@ -73,33 +91,39 @@ class ViewController: UIViewController {
     
 
   //  let tablica:[Int]=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-    func randomQuestion(){
-       print(generateRandomNumber(1, 15, 10))
-       
-       var randomNumber = arc4random() % 4
+   /* func randomQuestion(){
         
-       randomNumber+=1
+     
+      var tablica=generateRandomNumber(1, 15, 10)
+        print (tablica[0])
+     
+        var randomNumber = tablica[0]
+
         
+     
+     
+  */
         
+    
+    
+    
+    func losowanie()
+    {
         
+        i=i+1
+        j=j+1
+        var pytanie = tablicaPytan[i]
         
+        var wynik=gotowka[j]
         
-        
-        
-        
-        /*  var randomNumber = arc4random_uniform(15)+1
+        nextQuestion.isHidden=true
+        komunikatLabel.text=""
+        wynikLabel.text="Grasz o "+wynik
          
-         for i in 1...10
-         {
-         randomNumber = arc4random_uniform(15)+1
-         print(randomNumber)
-         
-         }
-         
-         
-         */
         
-        switch (randomNumber){
+    
+        
+        switch (pytanie){
         case 1:
             
             questionLabel.text="W którym roku wybuchła pierwsza wojna światowa?"
@@ -217,7 +241,7 @@ class ViewController: UIViewController {
             
         case 12:
             
-            questionLabel.text="Ile trwała wojna w historii?"
+            questionLabel.text="Ile trwała najkrótsza wojna w historii?"
             button1.setTitle("A:mniej niż godzinę", for: UIControlState.normal)
             button2.setTitle("B: miesiąc bez jednego dnia", for: UIControlState.normal)
             button3.setTitle("C: prawie dobę", for: UIControlState.normal)
@@ -269,17 +293,73 @@ class ViewController: UIViewController {
     
     
     @IBAction func button1Action(_ sender: Any) {
+        if (correctAnswer=="1")
+        {
+           komunikatLabel.text="To poprawna odpowiedź!"
+            
+            nextQuestion.isHidden=false;
+        }
+        else
+        
+        {
+            
+            komunikatLabel.text="Niestety to nie jest poprawna odopowiedź"
+        }
+        
     }
     
     @IBAction func button2Action(_ sender: Any) {
+        if (correctAnswer=="2")
+        {
+           komunikatLabel.text="To poprawna odpowiedź!"
+             nextQuestion.isHidden=false;
+        }
+        else
+            
+        {
+            
+            komunikatLabel.text="Niestety to nie jest poprawna odopowiedź"
+        }
+
     }
     
     @IBAction func button3Action(_ sender: Any) {
+        if (correctAnswer=="3")
+        {
+           komunikatLabel.text="To poprawna odpowiedź!"
+             nextQuestion.isHidden=false;
+        }
+        else
+            
+        {
+            
+            komunikatLabel.text="Niestety to nie jest poprawna odopowiedź"
+        }
+
     }
     
     @IBAction func button4Action(_ sender: Any) {
+        
+        if (correctAnswer=="4")
+        {
+           komunikatLabel.text="To poprawna odpowiedź!"
+            nextQuestion.isHidden=false
+            
+        }
+        else
+            
+        {
+            
+            komunikatLabel.text="Niestety to nie jest poprawna odopowiedź"
+        }
+
     }
 
+    @IBAction func nextQuestionAction(_ sender: Any) {
+        
+   losowanie()
+    }
+   
 
 }
 
